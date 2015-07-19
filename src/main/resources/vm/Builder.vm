@@ -1,0 +1,17 @@
+public class ${BuilderClass} {
+    private ${TargetClass} obj = new ${TargetClass}();
+
+    private ${BuilderClass}() {
+    }
+
+    public static ${BuilderClass} newBuilder() {
+        return new ${BuilderClass}();
+    }
+
+    #foreach($field in ${fields})
+    public ${BuilderClass} $field.getWriteMethod().getName() ($field.getPropertyType().getName() $field.getName()){
+        obj.fieldWriteMethod(fieldname);
+        return this;
+    }
+    #end
+}

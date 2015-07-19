@@ -1,0 +1,8 @@
+public class Constants {
+
+#foreach($p in ${properties.keySet()})
+    @Value("${p}")
+    public static String ${properties.get($p)};
+#end
+
+}
